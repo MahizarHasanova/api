@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>justfun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+    <style>
+        .wow:first-child {
+            visibility: hidden;
+        }
+
+        /* Additional styles for the canvas */
+        #game {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="">By Mahmizar <span>Hasanova</span></a>
+            </div>
+       
+            <div class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#justfun">Just Fun</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Start Home -->
+    <section class="home wow flash" id="home">
+        <div class="container">
+            <h1 class="wow slideInLeft" data-wow-delay="1s">Sizi <span></span>Gözəyirik. </h1>
+            <h1 class="wow slideInRight" data-wow-delay="1s">Sadəcə <span>Əylən</span></h1>
+        </div>
+    </section>
+<!-- End Just Fun -->
+<section class="about" id="about">
+    <div class="container">
+        <h1>Enter Your Favorite Songs</h1>
+        <form id="song-form">
+            <input type="text" id="song" name="song" placeholder="Şarkı adı" required>
+            <button type="submit">Ekle</button>
+        </form>
+        <h2>Your Favorite Songs:</h2>
+        <ul id="song-list">
+            
+                <li></li>
+            
+        </ul>
+    </div>
+</div>
+    
+<script>
+    const form = document.getElementById('song-form');
+    const songInput = document.getElementById('song');
+    const songList = document.getElementById('song-list');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const newSong = songInput.value;
+        if (newSong) {
+            const listItem = document.createElement('li');
+            listItem.textContent = newSong;
+            songList.appendChild(listItem);
+            songInput.value = '';
+        }
+    });
+</script>
+</section>
+
+</body>
+</html>
